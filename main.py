@@ -10,7 +10,7 @@ current_date = datetime.strptime(start_date, "%d/%m/%Y") + timedelta(days=delta_
 
 def movie_decider(date):
     global ascending
-    days_since_start = (date - datetime.strptime(start_date, "%d/%m/%Y")).days
+    days_since_start = (date - datetime.strptime(start_date, "%d/%m/%Y")).days + 7
     total_people = len(people)
 
     if ascending:
@@ -32,5 +32,5 @@ def movie_decider(date):
         print(f"The next person to decide is {people[index]} on {next_saturday.strftime('%d/%m/%Y')}.")
 
 
-# Example usage
-movie_decider(current_date)
+if __name__ == '__main__':
+    movie_decider(current_date)
